@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ProcentInBank
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var str = Console.ReadLine();
+            var parts = str.Split();
+            var sum = double.Parse(parts[0]);
+            var rate = double.Parse(parts[1]);
+            var mounth = int.Parse(parts[2]);
+            Console.WriteLine(Calculate(sum, rate, mounth));
+        }
+        public static double Calculate(double sum, double rate, int mounth)
+        {
+            double YearRate = rate / 12;
+            return sum = sum * Math.Pow(((YearRate + 100) / 100), mounth);
+        }
+    }
+}
